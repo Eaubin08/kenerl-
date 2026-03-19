@@ -1,0 +1,5 @@
+{
+  "name": "Obsidia Governance Core",
+  "description": "A deterministic governance core that controls systems before they take action. Security, traceability, and proof for AI and automated systems.",
+  "requestFramePermissions": []
+}

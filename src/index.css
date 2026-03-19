@@ -1,0 +1,25 @@
+@import "tailwindcss";
+
+@theme {
+  --font-sans: "Inter", ui-sans-serif, system-ui, sans-serif;
+  --font-display: "Space Grotesk", sans-serif;
+  
+  --color-obsidia-bg: #05070a;
+  --color-obsidia-ink: #f5f5f4;
+  --color-obsidia-accent: #f27d26;
+  --color-obsidia-accent-muted: #a3521a;
+  --color-obsidia-blue: #1e293b;
+  --color-obsidia-line: rgba(242, 125, 38, 0.1);
+}
+
+@layer base {
+  body {
+    @apply bg-obsidia-bg text-obsidia-ink font-sans antialiased;
+  }
+  
+  h1, h2, h3, h4 {
+    @apply font-display tracking-tight;
+  }
+}
+
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Space+Grotesk:wght@300;500;700&display=swap');
