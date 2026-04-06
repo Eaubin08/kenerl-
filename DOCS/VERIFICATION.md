@@ -41,4 +41,4 @@ lake build
 ---
 *La confiance est un risque. La preuve est une certitude.*
 
-🔗 **Accéder à l'App :** [https://ais-dev-eflc7fh363ofplr7vj5kfa-422332693421.europe-west2.run.app](https://ais-dev-eflc7fh363ofplr7vj5kfa-422332693421.europe-west2.run.app)
+🔗 **Accéder à l'App :** [https://obsidia-governance-core-1030177622351.us-west1.run.app/](https://obsidia-governance-core-1030177622351.us-west1.run.app/)

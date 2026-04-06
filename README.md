@@ -5,7 +5,7 @@ Obsidia est un système de sécurité déterministe conçu pour protéger les in
 ## 🚀 L'Application Obsidia
 L'application interactive est la vitrine de contrôle du noyau de gouvernance. Elle permet de visualiser la stabilité du système et de tester sa résilience en temps réel.
 
-*   **Accès à l'App :** [https://ais-dev-eflc7fh363ofplr7vj5kfa-422332693421.europe-west2.run.app](https://ais-dev-eflc7fh363ofplr7vj5kfa-422332693421.europe-west2.run.app)
+*   **Accès à l'App :** [https://obsidia-governance-core-1030177622351.us-west1.run.app/](https://obsidia-governance-core-1030177622351.us-west1.run.app/)
 *   **Guide de l'App :** [DOCS/APP_MANUAL.md](DOCS/APP_GUIDE.md)
 
 ## 🛡️ Les Piliers Techniques

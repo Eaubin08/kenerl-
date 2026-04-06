@@ -39,4 +39,4 @@ Chaque état du système est condensé dans une racine de Merkle.
 ---
 *Obsidia : La sécurité par la preuve, pas par la détection.*
 
-🔗 **Accéder à l'App :** [https://ais-dev-eflc7fh363ofplr7vj5kfa-422332693421.europe-west2.run.app](https://ais-dev-eflc7fh363ofplr7vj5kfa-422332693421.europe-west2.run.app)
+🔗 **Accéder à l'App :** [https://obsidia-governance-core-1030177622351.us-west1.run.app/](https://obsidia-governance-core-1030177622351.us-west1.run.app/)
