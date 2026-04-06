@@ -1,0 +1,41 @@
+name: Obsidia Proof Verification
+
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]
+
+jobs:
+  verify-proofs:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      
+      - name: Set up Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: 18
+          
+      - name: Install dependencies
+        run: npm install
+        
+      - name: Run Proof Tests
+        run: npm test tests/proof_of_action.test.ts
+        
+      - name: Run Performance Benchmarks
+        run: npm test tests/performance.test.ts
+        
+      - name: Run Security Threshold Tests
+        run: npm test tests/security_thresholds.test.ts
+        
+      - name: Set up Python
+        uses: actions/setup-python@v4
+        with:
+          python-version: '3.x'
+          
+      - name: Verify Merkle Integrity
+        run: python3 scripts/verify_merkle.py
+        
+      - name: Sigma Engine Stability Check
+        run: python3 sigma/sigma_monitor.py

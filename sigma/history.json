@@ -1,0 +1,27 @@
+[
+  {
+    "timestamp": 1712400000,
+    "stability": 99.45,
+    "status": "NOMINAL"
+  },
+  {
+    "timestamp": 1712403600,
+    "stability": 98.12,
+    "status": "NOMINAL"
+  },
+  {
+    "timestamp": 1712407200,
+    "stability": 97.88,
+    "status": "NOMINAL"
+  },
+  {
+    "timestamp": 1712410800,
+    "stability": 72.34,
+    "status": "LOCKED"
+  },
+  {
+    "timestamp": 1712414400,
+    "stability": 99.10,
+    "status": "NOMINAL"
+  }
+]

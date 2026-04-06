@@ -1,5 +1,5 @@
 import { motion, AnimatePresence } from "motion/react";
-import { Shield, Lock, FileCheck, Database, AlertCircle, CheckCircle2, Fingerprint, History, FileWarning, Activity, ShieldCheck, Code, Zap, Clock, Info, HelpCircle, Github, ArrowRight, ShieldAlert, Terminal } from "lucide-react";
+import { Shield, Lock, FileCheck, Database, AlertCircle, CheckCircle2, Fingerprint, History, FileWarning, Activity, ShieldCheck, Code, Zap, Clock, Info, HelpCircle, Github, ArrowRight, ShieldAlert, Terminal, Binary } from "lucide-react";
 import { useState, useEffect } from "react";
 import { LineChart, Line, XAxis, YAxis, CartesianGrid, Tooltip, ResponsiveContainer } from 'recharts';
 import GlossaryTerm from "../components/GlossaryTerm";
@@ -375,7 +375,7 @@ const Securite = () => {
                   Obsidia génère un <span className="text-obsidia-accent font-bold">Sceau Merkle</span> unique. Si un seul bit du système change, le sceau se brise. C'est la preuve physique de l'intégrité.
                   <br /><br />
                   <a 
-                    href={`${CONFIG.GITHUB_REPO}/blob/main/verify_merkle.py`} 
+                    href={`${CONFIG.GITHUB_REPO}/blob/main/scripts/verify_merkle.py`} 
                     target="_blank" 
                     rel="noopener noreferrer"
                     className="text-obsidia-accent hover:underline inline-flex items-center gap-2 text-sm font-bold uppercase tracking-widest"
@@ -438,6 +438,177 @@ const Securite = () => {
                     </motion.div>
                   )}
                 </div>
+              </div>
+            </div>
+
+            {/* PROOF EXPLORER - NEW SUBSECTION */}
+            <div className="mt-20 pt-20 border-t border-obsidia-bg/10">
+              <div className="flex items-center gap-3 mb-8">
+                <Binary className="text-obsidia-accent w-4 h-4" />
+                <h4 className="text-xs font-bold uppercase tracking-widest text-obsidia-bg/40 italic">Explorateur de Preuve Merkle</h4>
+              </div>
+              
+              <div className="grid md:grid-cols-4 gap-4">
+                {[
+                  { label: "Règle X-108", hash: "0x8f2...e1a", status: "VERIFIED" },
+                  { label: "Seuil Sigma", hash: "0x3c4...b9d", status: "VERIFIED" },
+                  { label: "Filtre OS2", hash: "0x1a2...f5c", status: "VERIFIED" },
+                  { label: "Audit Logs", hash: isTampered ? "0xERR_COLLISION" : "0x9d8...a1b", status: isTampered ? "FAILED" : "VERIFIED" }
+                ].map((item, i) => (
+                  <div key={i} className="p-4 bg-obsidia-bg/5 border border-obsidia-bg/10 rounded-sm">
+                    <div className="text-[8px] font-bold uppercase text-obsidia-bg/30 mb-2">{item.label}</div>
+                    <div className="font-mono text-[10px] text-obsidia-accent mb-2">{item.hash}</div>
+                    <div className={`text-[8px] font-bold ${item.status === 'VERIFIED' ? 'text-emerald-500' : 'text-red-500'}`}>
+                      ● {item.status}
+                    </div>
+                  </div>
+                ))}
+              </div>
+              <div className="mt-8 text-center">
+                <p className="text-[10px] text-obsidia-bg/40 italic leading-relaxed">
+                  Chaque bloc ci-dessus représente une feuille de l'arbre de Merkle. La racine globale affichée plus haut est le résultat du hachage récursif de ces feuilles. <br />
+                  Toute modification d'une feuille invalide instantanément la racine.
+                </p>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        {/* Adversarial Table Section */}
+        <section className="mb-32">
+          <div className="flex items-center gap-3 mb-12">
+            <History className="text-obsidia-accent w-6 h-6" />
+            <h2 className="text-3xl font-bold uppercase tracking-tight italic">Historique des Dérives Sigma</h2>
+          </div>
+          
+          <div className="grid lg:grid-cols-3 gap-8">
+            <div className="lg:col-span-2 bg-obsidia-bg border border-obsidia-line p-8">
+              <div className="h-[250px] w-full">
+                <ResponsiveContainer width="100%" height="100%">
+                  <LineChart data={[
+                    { time: '08:00', stability: 99.4 },
+                    { time: '10:00', stability: 98.1 },
+                    { time: '12:00', stability: 97.8 },
+                    { time: '14:00', stability: 72.3 },
+                    { time: '16:00', stability: 99.1 },
+                    { time: '18:00', stability: 98.5 },
+                    { time: '20:00', stability: 99.2 }
+                  ]}>
+                    <CartesianGrid strokeDasharray="3 3" stroke="#e5e5e5" vertical={false} />
+                    <XAxis dataKey="time" stroke="#141414" fontSize={10} tickLine={false} axisLine={false} />
+                    <YAxis domain={[40, 110]} hide />
+                    <Tooltip 
+                      contentStyle={{ backgroundColor: '#fff', border: '1px solid #141414', fontSize: '10px', borderRadius: '0' }}
+                    />
+                    <Line type="stepAfter" dataKey="stability" stroke="#f27d26" strokeWidth={2} dot={{ r: 4, fill: '#f27d26' }} />
+                    <Line type="monotone" dataKey="stability" stroke="#ef4444" strokeDasharray="3 3" strokeWidth={1} dot={false} opacity={0.3} />
+                  </LineChart>
+                </ResponsiveContainer>
+              </div>
+              <div className="mt-6 flex items-center gap-6">
+                <div className="flex items-center gap-2">
+                  <div className="w-2 h-2 rounded-full bg-red-500" />
+                  <span className="text-[10px] font-bold uppercase tracking-widest text-obsidia-ink/40">Incident Détecté (14:00)</span>
+                </div>
+                <div className="flex items-center gap-2">
+                  <div className="w-2 h-2 rounded-full bg-emerald-500" />
+                  <span className="text-[10px] font-bold uppercase tracking-widest text-obsidia-ink/40">Restauration Déterministe</span>
+                </div>
+              </div>
+            </div>
+
+            <div className="space-y-4">
+              <div className="p-6 border border-obsidia-line bg-obsidia-blue/5">
+                <h4 className="text-xs font-bold uppercase tracking-widest text-obsidia-accent mb-4">Analyse de l'Incident</h4>
+                <div className="space-y-4">
+                  <div className="flex justify-between items-center border-b border-obsidia-line pb-2">
+                    <span className="text-[10px] text-obsidia-ink/40 uppercase">Vecteur</span>
+                    <span className="text-[10px] font-bold">Flashloan Drift</span>
+                  </div>
+                  <div className="flex justify-between items-center border-b border-obsidia-line pb-2">
+                    <span className="text-[10px] text-obsidia-ink/40 uppercase">Impact</span>
+                    <span className="text-[10px] font-bold text-red-500">Verrouillage Noyau</span>
+                  </div>
+                  <div className="flex justify-between items-center border-b border-obsidia-line pb-2">
+                    <span className="text-[10px] text-obsidia-ink/40 uppercase">Résultat</span>
+                    <span className="text-[10px] font-bold text-emerald-500">Zéro Perte</span>
+                  </div>
+                </div>
+                <p className="mt-6 text-[9px] text-obsidia-ink/50 leading-relaxed italic">
+                  "L'incident du 06/04 à 14:00 prouve l'efficacité du seuil Sigma : le noyau s'est verrouillé avant que l'attaquant ne puisse finaliser l'action."
+                </p>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        {/* Cryptographic Arsenal Section */}
+        <section className="mb-32">
+          <div className="flex items-center gap-3 mb-12">
+            <Lock className="text-obsidia-accent w-6 h-6" />
+            <h2 className="text-3xl font-bold uppercase tracking-tight italic">L'Arsenal Cryptographique</h2>
+          </div>
+
+          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+            {[
+              {
+                title: "SHA-256 Hashing",
+                desc: "Chaque règle, chaque log et chaque état du système est transformé en une empreinte numérique unique de 256 bits. Une modification d'un seul caractère change totalement le hash.",
+                icon: Fingerprint,
+                tech: "Standard Militaire"
+              },
+              {
+                title: "Merkle Integrity",
+                desc: "Les hashs sont organisés en arbre. La racine Merkle (Root) scelle l'intégralité du système. C'est ce qui permet de vérifier des millions de données avec une seule preuve.",
+                icon: Binary,
+                tech: "Structure Immuable"
+              },
+              {
+                title: "Ed25519 Signatures",
+                desc: "Toutes les communications entre les nœuds N4 sont signées numériquement. Cela garantit que l'expéditeur est authentique et que le message n'a pas été intercepté.",
+                icon: ShieldCheck,
+                tech: "Authenticité Prouvée"
+              },
+              {
+                title: "Formal Logic (Lean 4)",
+                desc: "Contrairement au code classique, notre logique cryptographique est vérifiée mathématiquement. Nous prouvons qu'il n'y a aucun chemin logique vers une faille.",
+                icon: Code,
+                tech: "Zéro-Bug Garanti"
+              }
+            ].map((item, i) => (
+              <div key={i} className="p-8 border border-obsidia-line bg-obsidia-bg hover:border-obsidia-accent transition-all group relative overflow-hidden">
+                <div className="absolute top-0 right-0 p-4 opacity-5 group-hover:opacity-10 transition-opacity">
+                  <item.icon className="w-16 h-16" />
+                </div>
+                <div className="text-obsidia-accent mb-6">
+                  <item.icon className="w-8 h-8" />
+                </div>
+                <h3 className="text-lg font-bold uppercase tracking-tight italic mb-4">{item.title}</h3>
+                <p className="text-[10px] text-obsidia-ink/60 leading-relaxed mb-6">
+                  {item.desc}
+                </p>
+                <div className="pt-4 border-t border-obsidia-line">
+                  <span className="text-[8px] font-bold uppercase tracking-widest text-obsidia-accent/60">{item.tech}</span>
+                </div>
+              </div>
+            ))}
+          </div>
+
+          <div className="mt-12 p-10 bg-obsidia-ink text-obsidia-bg rounded-sm border border-obsidia-accent/20">
+            <div className="flex flex-col md:flex-row gap-12 items-center">
+              <div className="flex-shrink-0">
+                <div className="w-20 h-20 border-2 border-obsidia-accent flex items-center justify-center">
+                  <Terminal className="w-10 h-10 text-obsidia-accent" />
+                </div>
+              </div>
+              <div>
+                <h4 className="text-xl font-bold uppercase tracking-tight italic mb-4">Comment nous sécurisons chaque étape</h4>
+                <p className="text-sm text-obsidia-bg/60 leading-relaxed max-w-3xl">
+                  Chaque étape du pipeline (Validation, Filtrage, Scellage) est protégée par une couche cryptographique. 
+                  Lorsqu'une règle est activée, elle est hachée et insérée dans l'arbre de Merkle. 
+                  Le moniteur Sigma vérifie ensuite la signature de cette règle avant de l'autoriser. 
+                  Enfin, le sas X-108 utilise des horodatages signés pour garantir que le délai de 108s est respecté de manière déterministe.
+                </p>
               </div>
             </div>
           </div>

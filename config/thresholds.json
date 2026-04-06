@@ -1,0 +1,26 @@
+{
+  "X108": {
+    "MIN_DELAY_SECONDS": 108,
+    "DESCRIPTION": "Minimum temporal lock for critical state transitions."
+  },
+  "SIGMA_ENGINE": {
+    "STABILITY_THRESHOLD": 0.80,
+    "VARIANCE_TOLERANCE": 0.05,
+    "DESCRIPTION": "Behavioral drift detection floor."
+  },
+  "OS2_FILTER": {
+    "MAX_VELOCITY_OPS": 5000,
+    "BURST_TOLERANCE": 1.2,
+    "DESCRIPTION": "Anti-spam and flashloan velocity ceiling."
+  },
+  "N4_CONSENSUS": {
+    "QUORUM_PERCENTAGE": 0.67,
+    "MIN_NODES": 4,
+    "DESCRIPTION": "Byzantine Fault Tolerance quorum requirement."
+  },
+  "MERKLE_TREE": {
+    "MAX_DEPTH": 32,
+    "HASH_ALGORITHM": "SHA-256",
+    "DESCRIPTION": "Cryptographic integrity tree constraints."
+  }
+}

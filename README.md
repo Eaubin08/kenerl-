@@ -24,9 +24,11 @@ Pour plus de détails techniques, consultez l'**[Architecture Technique](DOCS/AR
 ## 🔗 Connexion avec le Dépôt GitHub
 Ce dépôt (`obsidia-x108-proofs`) contient le **Cœur de Preuve** du système. L'application interactive utilise les calculs et les preuves formelles hébergés ici pour garantir son exécution.
 
-*   **Lean 4 :** Preuves formelles de sécurité.
-*   **Sigma Engine :** Moteur de calcul de stabilité (`sigma_monitor.py`).
-*   **Scripts de Vérification :** Outils d'audit d'intégrité (`verify_merkle.py`).
+*   **GitHub Action :** Un workflow automatique (`test-proofs.yml`) vérifie la stabilité Sigma et l'intégrité Merkle sur chaque push.
+*   **Lean 4 :** Preuves formelles de sécurité (`lean/ObsidiaProofs.lean`).
+*   **Sigma Engine :** Moteur de calcul de stabilité (`sigma/sigma_monitor.py`).
+*   **Scripts de Vérification :** Outils d'audit d'intégrité (`scripts/verify_merkle.py`).
+*   **Tests de Preuve :** Suite de tests Vitest (`tests/proof_of_action.test.ts`) pour valider les invariants.
 
 Consultez le guide de **[Connexion GitHub](DOCS/GITHUB_CONNECTION.md)** et le **[Guide de Vérification Locale](DOCS/VERIFICATION.md)** pour comprendre comment l'App et le code interagissent.
 
