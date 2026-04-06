@@ -1,5 +1,9 @@
 # Obsidia : Gouvernance Déterministe X-108
 
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE)
+[![Security: Obsidia](https://img.shields.io/badge/Security-Obsidia-blue.svg)](SECURITY.md)
+[![Stability: Sigma](https://img.shields.io/badge/Stability-Sigma-green.svg)](DOCS/ARCHITECTURE.md)
+
 Obsidia est un système de sécurité déterministe conçu pour protéger les infrastructures critiques et les agents IA contre les attaques de vélocité et les instabilités de marché.
 
 ## 🚀 L'Application Obsidia
@@ -26,5 +30,12 @@ Ce dépôt (`obsidia-x108-proofs`) contient le **Cœur de Preuve** du système. 
 
 Consultez le guide de **[Connexion GitHub](DOCS/GITHUB_CONNECTION.md)** et le **[Guide de Vérification Locale](DOCS/VERIFICATION.md)** pour comprendre comment l'App et le code interagissent.
 
+## 🤝 Contribuer & Sécurité
+*   **[Guide de Contribution](CONTRIBUTING.md)** : Comment aider à améliorer Obsidia.
+*   **[Politique de Sécurité](SECURITY.md)** : Signaler une vulnérabilité.
+*   **[Licence MIT](LICENSE)** : Conditions d'utilisation.
+
 ---
 *Obsidia : La sécurité par la preuve, pas par la détection.*
+
+🔗 **Accéder à l'App :** [https://obsidia-governance-core-1030177622351.us-west1.run.app/](https://obsidia-governance-core-1030177622351.us-west1.run.app/)
