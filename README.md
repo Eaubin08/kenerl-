@@ -15,7 +15,7 @@ Obsidia repose sur trois concepts fondamentaux qui garantissent une sécurité a
 2.  **Sigma Engine (Le Gyroscope) :** Un moteur de surveillance de stabilité en temps réel.
 3.  **Merkle Proofs (Le Sceau) :** Une intégrité cryptographique scellée et vérifiable.
 
-Pour plus de détails techniques, consultez l'**[Architecture Technique](DOCS/ARCHITECTURE.md)**.
+Pour plus de détails techniques, consultez l'**[Architecture Technique](DOCS/ARCHITECTURE.md)** et le **[Glossaire](DOCS/GLOSSARY.md)**.
 
 ## 🔗 Connexion avec le Dépôt GitHub
 Ce dépôt (`obsidia-x108-proofs`) contient le **Cœur de Preuve** du système. L'application interactive utilise les calculs et les preuves formelles hébergés ici pour garantir son exécution.
@@ -24,7 +24,7 @@ Ce dépôt (`obsidia-x108-proofs`) contient le **Cœur de Preuve** du système. 
 *   **Sigma Engine :** Moteur de calcul de stabilité (`sigma_monitor.py`).
 *   **Scripts de Vérification :** Outils d'audit d'intégrité (`verify_merkle.py`).
 
-Consultez le guide de **[Connexion GitHub](DOCS/GITHUB_CONNECTION.md)** pour comprendre comment l'App et le code interagissent.
+Consultez le guide de **[Connexion GitHub](DOCS/GITHUB_CONNECTION.md)** et le **[Guide de Vérification Locale](DOCS/VERIFICATION.md)** pour comprendre comment l'App et le code interagissent.
 
 ---
 *Obsidia : La sécurité par la preuve, pas par la détection.*

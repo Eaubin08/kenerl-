@@ -2,6 +2,20 @@
 
 Obsidia repose sur une approche de **Gouvernance Déterministe**. Contrairement aux systèmes de sécurité classiques qui réagissent *après* une intrusion, Obsidia empêche l'exécution de toute action qui ne respecte pas une preuve formelle de sécurité.
 
+## Flux d'Exécution Sécurisé
+
+```mermaid
+graph TD
+    A[Intention d'Action] --> B{Sigma Engine}
+    B -- Instabilité Détectée --> C[VERROUILLAGE IMMÉDIAT]
+    B -- Stabilité Confirmée --> D[Protocole X-108]
+    D -- Attente 108s --> E{Validation Humaine/IA}
+    E -- Rejet --> F[ANNULATION]
+    E -- Validation --> G[Sceau Merkle]
+    G --> H[Exécution Réelle]
+    H --> I[Preuve Immuable]
+```
+
 ## 1. Le Protocole X-108 (Le Frein Temporel)
 Le protocole **X-108** impose un délai de **108 secondes** sur toutes les transactions ou commandes identifiées comme critiques. 
 
@@ -24,3 +38,5 @@ Chaque état du système est condensé dans une racine de Merkle.
 
 ---
 *Obsidia : La sécurité par la preuve, pas par la détection.*
+
+🔗 **Accéder à l'App :** [https://ais-dev-eflc7fh363ofplr7vj5kfa-422332693421.europe-west2.run.app](https://ais-dev-eflc7fh363ofplr7vj5kfa-422332693421.europe-west2.run.app)
