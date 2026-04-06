@@ -1,20 +1,30 @@
-<div align="center">
-<img width="1200" height="475" alt="GHBanner" src="https://github.com/user-attachments/assets/0aa67016-6eaf-458a-adb2-6e31a0763ed6" />
-</div>
+# Obsidia : Gouvernance Déterministe X-108
 
-# Run and deploy your AI Studio app
+Obsidia est un système de sécurité déterministe conçu pour protéger les infrastructures critiques et les agents IA contre les attaques de vélocité et les instabilités de marché.
 
-This contains everything you need to run your app locally.
+## 🚀 L'Application Obsidia
+L'application interactive est la vitrine de contrôle du noyau de gouvernance. Elle permet de visualiser la stabilité du système et de tester sa résilience en temps réel.
 
-View your app in AI Studio: https://ai.studio/apps/9d226640-3db4-4802-821f-45e2c2380b2d
+*   **Accès à l'App :** [https://ais-dev-eflc7fh363ofplr7vj5kfa-422332693421.europe-west2.run.app](https://ais-dev-eflc7fh363ofplr7vj5kfa-422332693421.europe-west2.run.app)
+*   **Guide de l'App :** [DOCS/APP_MANUAL.md](DOCS/APP_GUIDE.md)
 
-## Run Locally
+## 🛡️ Les Piliers Techniques
+Obsidia repose sur trois concepts fondamentaux qui garantissent une sécurité absolue :
 
-**Prerequisites:**  Node.js
+1.  **X-108 (Le Frein Temporel) :** Un délai de 108 secondes imposé aux actions automatisées critiques.
+2.  **Sigma Engine (Le Gyroscope) :** Un moteur de surveillance de stabilité en temps réel.
+3.  **Merkle Proofs (Le Sceau) :** Une intégrité cryptographique scellée et vérifiable.
 
+Pour plus de détails techniques, consultez l'**[Architecture Technique](DOCS/ARCHITECTURE.md)**.
 
-1. Install dependencies:
-   `npm install`
-2. Set the `GEMINI_API_KEY` in [.env.local](.env.local) to your Gemini API key
-3. Run the app:
-   `npm run dev`
+## 🔗 Connexion avec le Dépôt GitHub
+Ce dépôt (`obsidia-x108-proofs`) contient le **Cœur de Preuve** du système. L'application interactive utilise les calculs et les preuves formelles hébergés ici pour garantir son exécution.
+
+*   **Lean 4 :** Preuves formelles de sécurité.
+*   **Sigma Engine :** Moteur de calcul de stabilité (`sigma_monitor.py`).
+*   **Scripts de Vérification :** Outils d'audit d'intégrité (`verify_merkle.py`).
+
+Consultez le guide de **[Connexion GitHub](DOCS/GITHUB_CONNECTION.md)** pour comprendre comment l'App et le code interagissent.
+
+---
+*Obsidia : La sécurité par la preuve, pas par la détection.*
