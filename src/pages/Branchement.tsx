@@ -1,5 +1,6 @@
 import { motion } from "motion/react";
-import { ArrowRight, Zap, CheckCircle2 } from "lucide-react";
+import { ArrowRight, Zap, CheckCircle2, Github } from "lucide-react";
+import { CONFIG } from "../config";
 
 const Branchement = () => {
   const profiles = [
@@ -254,6 +255,16 @@ const Branchement = () => {
                  <button className="px-12 py-5 bg-obsidia-accent text-obsidia-bg font-bold uppercase tracking-widest hover:scale-105 transition-transform flex items-center gap-4">
                    Sécuriser mon infrastructure <ArrowRight className="w-5 h-5" />
                  </button>
+               </div>
+               <div className="mt-12 flex justify-center">
+                 <a 
+                   href={CONFIG.GITHUB_REPO} 
+                   target="_blank" 
+                   rel="noopener noreferrer"
+                   className="text-obsidia-accent hover:underline inline-flex items-center gap-2 text-sm font-bold uppercase tracking-widest"
+                 >
+                   <Github className="w-4 h-4" /> Explorer le code source <ArrowRight className="w-3 h-3" />
+                 </a>
                </div>
              </div>
            </div>

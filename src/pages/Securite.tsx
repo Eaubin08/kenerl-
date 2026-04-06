@@ -1,5 +1,5 @@
 import { motion, AnimatePresence } from "motion/react";
-import { Shield, Lock, FileCheck, Database, AlertCircle, CheckCircle2, Fingerprint, History, FileWarning, Activity, ShieldCheck, Code, Zap, Clock, Info, HelpCircle, Github, ArrowRight, ShieldAlert } from "lucide-react";
+import { Shield, Lock, FileCheck, Database, AlertCircle, CheckCircle2, Fingerprint, History, FileWarning, Activity, ShieldCheck, Code, Zap, Clock, Info, HelpCircle, Github, ArrowRight, ShieldAlert, Terminal } from "lucide-react";
 import { useState, useEffect } from "react";
 import { LineChart, Line, XAxis, YAxis, CartesianGrid, Tooltip, ResponsiveContainer } from 'recharts';
 import GlossaryTerm from "../components/GlossaryTerm";
@@ -294,11 +294,31 @@ const Securite = () => {
                   {activeLayer === 2 && (
                     <div className="space-y-8">
                       <div className="flex justify-between items-center">
-                        <div className="flex items-center gap-3">
-                          <div className="text-[10px] font-bold uppercase tracking-widest text-obsidia-accent">Moniteur de Stabilité Sigma</div>
-                          <div className={`flex items-center gap-1.5 px-2 py-0.5 rounded-full border ${engineOnline ? 'bg-emerald-500/10 border-emerald-500/20 text-emerald-500' : 'bg-red-500/10 border-red-500/20 text-red-500'}`}>
-                            <div className={`w-1.5 h-1.5 rounded-full ${engineOnline ? 'bg-emerald-500' : 'bg-red-500 animate-pulse'}`} />
-                            <span className="text-[8px] font-bold uppercase tracking-widest">{engineOnline ? 'Live' : 'Offline'}</span>
+                        <div className="flex flex-col gap-1">
+                          <div className="flex items-center gap-3">
+                            <div className="text-[10px] font-bold uppercase tracking-widest text-obsidia-accent">Moniteur de Stabilité Sigma</div>
+                            <div className={`flex items-center gap-1.5 px-2 py-0.5 rounded-full border ${engineOnline ? 'bg-emerald-500/10 border-emerald-500/20 text-emerald-500' : 'bg-red-500/10 border-red-500/20 text-red-500'}`}>
+                              <div className={`w-1.5 h-1.5 rounded-full ${engineOnline ? 'bg-emerald-500 animate-pulse' : 'bg-red-500'}`} />
+                              <span className="text-[8px] font-bold uppercase tracking-widest">{engineOnline ? 'Live' : 'Offline'}</span>
+                            </div>
+                          </div>
+                          <div className="flex items-center gap-4">
+                            <a 
+                              href={`${CONFIG.GITHUB_REPO}/tree/main/sigma`} 
+                              target="_blank" 
+                              rel="noopener noreferrer"
+                              className="text-[9px] text-obsidia-ink/40 hover:text-obsidia-accent transition-colors flex items-center gap-1 uppercase font-bold tracking-widest"
+                            >
+                              <Github className="w-2.5 h-2.5" /> Accéder au répertoire Sigma
+                            </a>
+                            <a 
+                              href={`${CONFIG.GITHUB_REPO}/blob/main/sigma/sigma_monitor.py`} 
+                              target="_blank" 
+                              rel="noopener noreferrer"
+                              className="text-[9px] text-obsidia-ink/40 hover:text-obsidia-accent transition-colors flex items-center gap-1 uppercase font-bold tracking-widest"
+                            >
+                              <Terminal className="w-2.5 h-2.5" /> Source : sigma_monitor.py
+                            </a>
                           </div>
                         </div>
                         <button 

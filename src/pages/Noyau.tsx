@@ -472,6 +472,16 @@ const Noyau = () => {
             ))}
           </div>
         </div>
+        <div className="mt-24 text-center">
+          <a 
+            href={CONFIG.GITHUB_REPO} 
+            target="_blank" 
+            rel="noopener noreferrer"
+            className="text-obsidia-accent hover:underline inline-flex items-center gap-2 text-sm font-bold uppercase tracking-widest"
+          >
+            <Github className="w-4 h-4" /> Explorer le noyau de preuve <ArrowRight className="w-3 h-3" />
+          </a>
+        </div>
       </div>
     </div>
   );
